@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AnonChat Lite</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <div class="sidebar">
+    <h2>Bubbles</h2>
+    <div id="bubbleList"></div>
+  </div>
+
+  <div class="main">
+
+    <div class="topbar">
+      <div id="myIdDisplay"></div>
+	  <button id="regenBtn">Regenerate ID</button>
+      <div class="connectBox">
+        <input id="peerIdInput" placeholder="enter id">
+        <button id="connectBtn">Connect</button>
+      </div>
+    </div>
+
+    <div id="messages" class="messages"></div>
+
+    <input id="messageInput" class="messageInput" placeholder="type message..." autocomplete="off">
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

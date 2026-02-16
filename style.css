@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  background: #f4f4f4;
+  height: 100vh;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background: white;
+  border-right: 1px solid #ddd;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar button {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 8px;
+  background: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: black;
+  color: white;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  padding: 10px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.messageInput {
+  border: none;
+  border-top: 1px solid #ddd;
+  padding: 15px;
+  font-family: monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+.connectBox input {
+  padding: 5px;
+}
+
+.connectBox button {
+  padding: 5px 10px;
+}
