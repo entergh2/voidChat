@@ -1,76 +1,124 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
 body {
-  margin: 0;
-  font-family: monospace;
-  background: #f4f4f4;
-  height: 100vh;
+    background: linear-gradient(
+        -45deg,
+        #0f2027,
+        #203a43,
+        #2c5364,
+        #1c1c1c
+    );
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease infinite;
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.app {
-  display: flex;
-  height: 100vh;
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.sidebar {
-  width: 200px;
-  background: white;
-  border-right: 1px solid #ddd;
-  padding: 15px;
-  overflow-y: auto;
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.sidebar h2 {
-  margin-top: 0;
-}
-
-.sidebar button {
-  width: 100%;
-  margin-bottom: 5px;
-  padding: 8px;
-  background: white;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.sidebar button:hover {
-  background: black;
-  color: white;
-}
+/* =========================
+   MAIN LAYOUT
+========================= */
 
 .main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
 }
 
-.topbar {
-  padding: 10px;
-  background: white;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* =========================
+   SIDEBAR (BUBBLES)
+========================= */
+
+.bubble-container {
+    width: 220px;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.25);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bubble-container button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bubble-container button:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* =========================
+   CHAT AREA
+========================= */
+
+.chat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
 .messages {
-  flex: 1;
-  padding: 15px;
-  overflow-y: auto;
-  background: #fafafa;
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    font-size: 14px;
 }
 
-.messageInput {
-  border: none;
-  border-top: 1px solid #ddd;
-  padding: 15px;
-  font-family: monospace;
-  font-size: 14px;
-  outline: none;
+.input-row {
+    display: flex;
 }
 
-.connectBox input {
-  padding: 5px;
-}
-
-.connectBox button {
-  padding: 5px 10px;
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
 }
